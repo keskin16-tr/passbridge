@@ -27,7 +27,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
       - name: Build debug APK
-        run: gradle --no-daemon assembleDebug
+        run: gradle --no-daemon assembleDebug -Pkotlin.compiler.options.freeCompilerArgs="-opt-in=androidx.compose.material3.ExperimentalMaterial3Api"
       - name: Upload APK
         uses: actions/upload-artifact@v6
         with:
@@ -35,3 +35,4 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 14
+          
