@@ -8,7 +8,6 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -349,6 +348,7 @@ private fun PassPreview(card: PassCard) {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun FieldEditor(field: PassField, onChange: (PassField) -> Unit, onDelete: () -> Unit) {
     Card(colors = CardDefaults.cardColors(containerColor = Color(0xFF131F31))) {
