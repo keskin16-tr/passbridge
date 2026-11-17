@@ -13,18 +13,18 @@ jobs:
     steps:
     # 1. Proje kodunu GitHub'dan çeker
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     # 2. JDK (Java Development Kit) kurulumu yapar
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
+    - name: Set up JDK 22
+      uses: actions/setup-java@v6
       with:
-        java-version: '17'
+        java-version: '22'
         distribution: 'temurin'
 
     # 3. Gradle ortamını kurar ve önbellekleme (caching) yönetir
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@v4
+      uses: gradle/actions/setup-gradle@v6
 
     # 4. Gradle Wrapper'a çalıştırma izni ver (Linux/macOS için önemlidir)
     - name: Grant execute permission for gradlew
